@@ -23,16 +23,47 @@ class _BadgesScreenState extends State<BadgesScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Obx(() => Badge(
-                  badgeContent: Text(
-                    viewModel.snowCount.toString(),
-                    style: const TextStyle(color: Colors.white),
+            Obx(
+              () => Badge(
+                badgeContent: Text(
+                  viewModel.snowCount.toString(),
+                  style: const TextStyle(color: Colors.white),
+                ),
+                child: const Icon(
+                  Icons.ac_unit,
+                  size: 40,
+                ),
+              ),
+            ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text('Chip Widget : '),
+                Chip(
+                  padding: EdgeInsets.all(0),
+                  backgroundColor: Colors.deepPurple,
+                  label: Text('BADGE', style: TextStyle(color: Colors.white)),
+                ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text('Badge Widget : '),
+                Badge(
+                  toAnimate: false,
+                  shape: BadgeShape.square,
+                  badgeColor: Colors.deepPurple,
+                  borderRadius: BorderRadius.circular(8),
+                  badgeContent: const Text(
+                    'BADGE',
+                    style: TextStyle(color: Colors.white),
                   ),
-                  child: const Icon(
-                    Icons.ac_unit,
-                    size: 40,
-                  ),
-                )),
+                ),
+              ],
+            ),
           ],
         ),
       ),
