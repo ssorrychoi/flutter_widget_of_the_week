@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_of_the_week/badges/badges_screen.dart';
+import 'package:flutter_widget_of_the_week/drop_down_button/drop_down_button_screen.dart';
 import 'package:flutter_widget_of_the_week/home/my_home_page.dart';
 import 'package:get/get.dart';
 
@@ -29,6 +30,10 @@ class _MainScreenState extends State<MainScreen> {
               ElevatedButton(
                 onPressed: () => Get.to(const BadgesScreen()),
                 child: const Text('Badges'),
+              ),
+              ElevatedButton(
+                onPressed: () => Get.to(const DropDownButtonScreen()),
+                child: const Text('DropDownButton'),
               )
             ],
           ),
